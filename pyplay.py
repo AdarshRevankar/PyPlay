@@ -2,17 +2,20 @@ import numpy as np
 from PIL import ImageGrab
 import cv2
 import time
+from KeyModule import press_key, initiate, UP, DOWN, LEFT, RIGHT
 
 
 def process_img(original_img):
-    # takes image and processes it
     processed_img = cv2.cvtColor(original_img, cv2.COLOR_BGR2GRAY)
     processed_img = cv2.Canny(processed_img, threshold1=200, threshold2=300)
     return processed_img
 
 
-last_time = time.time()
+# initiate()
+# press_key(UP)
+# press_key(DOWN)
 
+last_time = time.time()
 while True:
     # Capture the image of position
     screen = np.array(ImageGrab.grab(bbox=(10, 40, 800, 600)))
